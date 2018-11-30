@@ -1,5 +1,5 @@
-FROM python:3.4-alpine
-ADD . /code
-WORKDIR /code
-RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+FROM java:8  
+COPY . /
+WORKDIR /  
+RUN javac DockerConnectMySQL.java
+CMD ["java", "-classpath", "mysql-connector-java-5.1.6.jar:.","DockerConnectMySQL"]
